@@ -3,14 +3,15 @@ class PostsController < ApplicationController
   def index  # indexアクションを定義した
     @posts = Post.all.order(id: "DESC")
   end
- # def new
+  #def new
   #end
-  def crerate
+  def create
     Post.create(content: params[:content])
     redirect_to action: :index
   end
 
   def checked
+
     post = Post.find(params[:id])
     if post.checked then
       post.update(checked: false)
