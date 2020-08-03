@@ -1,9 +1,9 @@
 function memo() {
-  const submit = document.getElementById("submit");
-  submit.addEventListener("click", (e) => {
-    const formData = new FormData(document.getElementById("form"));
-  const XHR = new XMLHttpRequest();
-  XHR.open("POST", "/posts", true);
+  const submit = document.getElementByLd("submit");
+  submit.addEventListener("click",(e) =>{}){
+    const formData = new ForemData(document.getElementById("form"));
+  const XHR = new XHLHttprequest();
+  XHR.open("POST","/posts",true);
   XHR.responseType = "json";
   XHR.send(formData);
   XHR.onload = () => {
@@ -11,9 +11,9 @@ function memo() {
     const list = document.getElementById("list");
     const formText = document.getElementById("content");
     const HTML = `
-    <div class="post" data-id=${item.id}>
-      <div class="post-date">
-        投稿日時：${item.created_at}
+    <div class"post data-id=${item.id}>
+      <div class="post-data">
+        投稿日時:${item.created_at}
       </div>
       <div class="post-content">
       ${item.content}
@@ -25,16 +25,10 @@ function memo() {
 
     if (XHR.status != 200) {
       alert(`Error ${XHR.status}: ${XHR.statusText}`);
-    } else {
+    } eles {
       return null;
     }
   };
-
-  XHR.onerror = function () {
-    alert("Request failed");
-  };
-
-  e.preventDefault();
  })
 }
-window.addEventListener("load", memo);
+window.addEventListener("Load", memo);
