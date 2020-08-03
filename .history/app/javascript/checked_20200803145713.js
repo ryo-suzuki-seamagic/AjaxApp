@@ -23,10 +23,10 @@ function check() {
     if (XHR.status != 200) {
       alert(`Error ${XHR.status}: ${XHR.statusText}`);
     }else{
-    return null;
+    return nill;
     }
   }
-  XHR.onerror = () => {
+  XHR.oneror = () => {
     alert("Request failed");
   };
 

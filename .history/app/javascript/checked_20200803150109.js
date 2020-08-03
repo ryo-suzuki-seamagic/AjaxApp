@@ -26,7 +26,7 @@ function check() {
     return null;
     }
   }
-  XHR.onerror = () => {
+  XHR.oneror = () => {
     alert("Request failed");
   };
 
